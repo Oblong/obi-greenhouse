@@ -64,6 +64,7 @@ def obi_new(**kwargs):
     project_path = kwargs['project_path']
     g_speak_xy = kwargs['g_speak_version']
     kwargs['yobuild'] = get_yobuild(g_speak_xy)
+    kwargs['YOBUILD'] = kwargs['yobuild']   # track $G_SPEAK/lib/cmake/ObGenerateProject.cmake
     kwargs['cef_branch'] = get_cef_branch(g_speak_xy)
 
     env = jinja2.Environment(loader=jinja2.PackageLoader(__name__),
